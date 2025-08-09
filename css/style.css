@@ -7,6 +7,7 @@
 /*=========================================== 
  * Importing CSS Libraries
  *===========================================*/
+ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap');
 article,
 aside,
 details,
@@ -1132,7 +1133,6 @@ form input[type="submit"], form button, form input[type="reset"] {
  */
 .site-header {
   position: relative;
-  /*z-index: 999;*/
   background: white;
   text-align: center;
   padding: 50px 0 30px; }
@@ -1543,7 +1543,7 @@ body {
 }
 
 /* Headings: elegant serif for the “church” tone */
-h1,h2,h3,h4,.site-title,.section-title {
+h1,h2,h3,h4,.site-title,.section-title,.site-header {
   font-family: "Playfair Display", Georgia, Cambria, "Times New Roman", Times, serif;
   color: var(--ink);
   letter-spacing: .02em;
@@ -1561,3 +1561,70 @@ h3{ font-weight:600; color: var(--pewter); }
 .branding { align-items:center; gap:5px; text-decoration:none; }
 .branding .logo { width: 52px; height:auto; filter: drop-shadow(0 1px 0 rgba(0,0,0,.05)); }
 .branding .site-title { margin:0; font-size:28px; text-transform:none; padding-bottom: 50px;}
+.branding,
+.branding:hover,
+.branding:focus {
+  text-decoration: none !important;
+}
+
+/* Images */
+img{ border-radius: 6px; }
+
+/* ============== About page readability (CSS-only) ============== */
+/* Targets the About section's container (it's the only one with .text-center) */
+.fullwidth-block .container.text-center .news{
+  text-align: left;                 /* stop center-justifying long text */
+  /* background: #fff;*/
+  /* border: 1px solid var(--stone); */
+  border-radius: 16px;
+  padding: 28px;
+  /* box-shadow: 0 10px 24px rgba(15,23,42,.06); */
+  max-width: 840px;                 /* keep line length comfortable */
+  margin: 0 auto 28px;              /* center the card */
+}
+
+/* Paragraph typography */
+.fullwidth-block .container.text-center .news p{
+  max-width: 70ch;                  /* ideal reading width */
+  margin: 0 auto 1.15em;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  hyphens: auto;
+  overflow-wrap: anywhere;
+  color: var(--pewter);
+}
+
+/* Slightly larger opening paragraph for scannability */
+.fullwidth-block .container.text-center .news p:first-of-type{
+  font-size: 1.15rem;
+  color: var(--ink);
+}
+
+.fullwidth-block .container.text-center .news p + p{
+  margin-top: 0.9em;
+}
+
+.fullwidth-block .container.text-center .news a{
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Section heading spacing on About */
+.fullwidth-block .container.text-center .section-title{
+  margin-bottom: 18px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px){
+  .fullwidth-block .container.text-center .news{
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(15,23,42,.06);
+  }
+  .fullwidth-block .container.text-center .news p{
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+}
