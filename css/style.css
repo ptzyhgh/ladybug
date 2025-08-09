@@ -1169,7 +1169,7 @@ form input[type="submit"], form button, form input[type="reset"] {
       margin: 0 10px; }
       .main-navigation .menu .menu-item a {
         display: block;
-        padding: 20px 0;
+        padding: 10px 0;
         text-transform: uppercase;
         font-family: "Novecento Sans", "Raleway", "Noto Sans" "Open Sans", sans-serif;
         font-weight: 400;
@@ -1517,3 +1517,47 @@ ul.bullet {
   margin: 0 auto; 
   width: 55%;
 }
+
+:root{
+  --ink:#0f172a;
+  --pewter:#334155;
+  --parchment:#f8f5f0;
+  --stone:#e8e3db;
+  --gold:#bfa06a;
+  --gold-dk:#a4874f;
+  --muted:#64748b;
+  --ring: rgba(191,160,106,.35);
+}
+
+/* Base look & typography */
+html { background: var(--parchment); }
+body {
+  color: var(--pewter);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  line-height: 1.65;
+  letter-spacing: .01em;
+  background:
+    radial-gradient(1200px 800px at 10% -20%, rgba(191,160,106,.08), transparent 60%),
+    radial-gradient(1000px 700px at 120% 0%, rgba(15,23,42,.06), transparent 55%),
+    var(--parchment);
+}
+
+/* Headings: elegant serif for the “church” tone */
+h1,h2,h3,h4,.site-title,.section-title {
+  font-family: "Playfair Display", Georgia, Cambria, "Times New Roman", Times, serif;
+  color: var(--ink);
+  letter-spacing: .02em;
+}
+h1{ font-weight:700; }
+h2,.section-title{ font-weight:600; }
+h3{ font-weight:600; color: var(--pewter); }
+
+/* Header */
+.site-header {
+  background: rgba(248,245,240,.75);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--stone);
+}
+.branding { align-items:center; gap:5px; text-decoration:none; }
+.branding .logo { width: 52px; height:auto; filter: drop-shadow(0 1px 0 rgba(0,0,0,.05)); }
+.branding .site-title { margin:0; font-size:28px; text-transform:none; padding-bottom: 50px;}
