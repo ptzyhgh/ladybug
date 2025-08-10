@@ -1636,3 +1636,147 @@ img{ border-radius: 6px; }
   display: block;
   margin: 10px auto;
 }
+
+/* ============================
+   Mobile nav: vertical, no collapse
+   ============================ */
+@media (max-width: 990px){
+  /* show the real menu, hide the toggle + cloned mobile nav */
+  .main-navigation .menu{ 
+    display: block !important;           /* override template's display:none */
+    margin: 0 -15px;                      /* edge-to-edge touch targets */
+  }
+  .menu-toggle,
+  .mobile-navigation{
+    display: none !important;
+  }
+
+  /* stack items */
+  .main-navigation .menu .menu-item{
+    display: block;
+    margin: 0;
+  }
+  .main-navigation .menu .menu-item a{
+    display: block;
+    padding: 14px 15px;
+    border-bottom: 1px solid #e5e5e5;     /* separators */
+    text-transform: none;                 /* more readable on small screens */
+    font-size: 16px;
+    line-height: 1.2;
+  }
+  .main-navigation .menu .menu-item:last-child a{
+    border-bottom: none;
+  }
+  /* current item state without thick underline */
+  .main-navigation .menu .menu-item.current-menu-item a{
+    background: rgba(191,160,106,.08);
+    border-bottom-color: #e5e5e5;
+  }
+
+  /* header/branding tidy */
+  .site-header{
+    padding: 18px 0 10px;
+  }
+  .branding{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .branding .logo{
+    width: 40px;
+    height: auto;
+  }
+  .branding .site-title{
+    font-size: 22px;
+    letter-spacing: .02em;
+    margin: 0;
+  }
+}
+
+/* ============================
+   General mobile polish
+   ============================ */
+@media (max-width: 768px){
+  /* countdown block fits phone width */
+  .clock{ width: 100%; }
+  .clock.fullwidth-block{
+    padding: 22px 14px;
+    border-radius: 12px;
+  }
+
+  /* FlipClock scales down if you're still using it */
+  .flip-clock-wrapper{
+    transform: scale(.9);
+    transform-origin: center top;
+  }
+
+  /* news cards spacing */
+  .news{ padding: 14px; border-radius: 12px; }
+
+  /* section titles a touch smaller */
+  .section-title{
+    font-size: 1.25rem;
+    margin-bottom: 14px;
+  }
+
+  /* event list: stop the two-column absolute layout on phones */
+  .event-list li{
+    padding: 12px 0 !important;
+  }
+  .event-list .event-meta{
+    position: relative;
+    width: auto;
+    right: auto;
+    display: block;
+    margin-top: 6px;
+    text-transform: none;
+  }
+
+  /* sermon list: reduce left thumb indent */
+  .sermon-list li{
+    padding-left: 80px;
+    min-height: 80px;
+  }
+  .sermon-list img{
+    width: 64px;
+    height: auto;
+  }
+
+  /* forms: comfortable tap area */
+  .contact-form input:not([type="submit"]), 
+  .contact-form textarea{
+    font-size: 16px;
+    padding: 14px;
+  }
+
+  /* container breathing room */
+  .container{ padding-left: 18px; padding-right: 18px; }
+}
+
+/* tiny phones */
+@media (max-width: 420px){
+  .flip-clock-wrapper{ transform: scale(.8); }
+  .branding .site-title{ font-size: 20px; }
+}
+
+/* Hide contact form & donation section on mobile */
+@media (max-width: 768px) {
+  /* Donation widget in middle footer column */
+  .site-footer .col-md-4:nth-child(2) {
+    display: none !important;
+  }
+  
+  /* Contact form in right footer column */
+  .site-footer .col-md-4:nth-child(3) {
+    display: none !important;
+  }
+}
+
+/* Limit main book image size on The Book page */
+.news-image {
+  max-width: 250px; /* adjust to taste */
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}

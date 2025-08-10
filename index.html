@@ -292,7 +292,6 @@
 			// Remaining time (never below zero)
 			var diff = Math.max(0, Math.floor((end.getTime() - adjustedStart.getTime()) / 1000));
 
-			// Initialize FlipClock with the remaining seconds
 			if ($(".countdown").length) {
 				$(".countdown").FlipClock(diff, {
 					clockFace: "DailyCounter",
