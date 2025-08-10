@@ -1628,3 +1628,11 @@ img{ border-radius: 6px; }
     line-height: 1.8;
   }
 }
+
+/* Make the Mark_Doorposts.png image small in sermons page */
+.sermon-content img[src*="Mark_Doorposts.png"] {
+  max-width: 60px;   /* adjust as needed */
+  height: auto;
+  display: block;
+  margin: 10px auto;
+}
